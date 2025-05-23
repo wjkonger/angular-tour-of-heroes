@@ -5,6 +5,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { HookLifecycleComponent } from './hook-lifecycle/hook-lifecycle.component';
+import { PipeComponent } from './pipe/pipe.component';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
@@ -13,6 +14,7 @@ export const routes: Routes = [
     {path: "directive", component: DirectiveComponent},
     {path: "login", component: LoginComponent},
     {path: "hook-lifecycle", component: HookLifecycleComponent},
+     {path: "pipe", component: PipeComponent},
     {path: "**", component: PageNotFoundComponent}
 
 ];

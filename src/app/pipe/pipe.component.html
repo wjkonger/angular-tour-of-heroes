@@ -1,0 +1,46 @@
+<div class="row">
+<input type="text" [(ngModel)]="name">
+</div>
+<div class="row">
+    <div class="col-4">
+        <b>Lowercase pipe</b><br>
+        {{ name | lowercase }}
+    </div>
+    <div class="col-4">
+        <b>Uppercase pipe</b><br>
+        {{ name | uppercase }}
+    </div>
+    <div class="col-4">
+        <b>Titlecase pipe</b><br>
+        {{ name | titlecase }}
+    </div>
+</div>
+<p></p>
+<div class="row">
+    <b>Date pipe</b><br>
+    <div class="col-4">
+        <p>{{ today | date:'yyyy-MM-dd HH:mm:ss' }}</p>
+    </div>
+    <div class="col-4">
+       <p>{{ today | date:'short' }}</p>
+    </div>
+    <div class="col-4">
+        <p>{{ today | date:'fullDate' }}</p>
+    </div>
+</div>
+<p></p>
+<div class="row">
+    <b>Json pipe</b><br>
+    <div class="col-4">
+        <pre>{{ data | json }}</pre>
+    </div>
+    <div class="col-4">
+       <p>{{ today | date:'short' }}</p>
+    </div>
+    <div class="col-4">
+        <p>{{ today | date:'fullDate' }}</p>
+    </div>
+</div>
+
+
+
