@@ -1,0 +1,29 @@
+<p><b>Angular Data Binding</b></p>
+<p>1. Interpolation - data flow from component to view 
+</p>
+<p>
+<b>{{ name }}</b>
+</p>
+<p>
+    2. Property Binding - data flow from component to view 
+</p>
+<P><input type="text" [value]="name" readonly></P>
+
+<p>
+    3. Event Binding data flow from view to component 
+</p>
+<div class="row text-left">
+    <div class="col-2"><button class="btn btn-success" (click)="onSubmit()">Submit</button></div>
+    <div class="col-2"><button class="btn btn-primary" (click)="onSave()">Save</button></div>
+    <div class="col-2"><input class="btn btn-secondary" type="button" value="Cancel" (click)="onCancel()"></div>
+    <div class="col-6"></div>
+</div>
+
+
+<p>
+    4. Two-way Binding
+</p>
+<P>Enter your name: <input type="text" [(ngModel)]="name"></P>
+<p>Your name: {{ name }}</p>
+
+

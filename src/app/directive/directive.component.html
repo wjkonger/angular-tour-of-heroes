@@ -1,0 +1,131 @@
+<p><b>Angualr Directive</b></p>
+<div row="row">
+    1. Component Directive
+</div>
+<div row="row">
+    2. Structuve Directive
+</div>
+<div class="row">
+
+    <div class="col-6">
+        <div class="row">
+            {{ "Sample to use *ngIf to show/hide text" }}
+        </div>
+        <div  (click)="onClick()">
+            <input type="checkbox"> Term and condition
+        </div>
+        <b *ngIf="isChecked">Term and condition box checked</b>
+    </div>
+    <div class="col-6">
+         <div class="row">
+            {{ "Sample to use @if to show/hide text" }}
+        </div>
+        <div class="col-6" (click)="onClick()">
+        <input type="checkbox"> Term and condition
+            @if (isChecked) {
+                <div>Term and condition box checked</div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<br>
+<div class="row text-center">
+    <div class="col-6">
+        <div class="row text-center">
+            Sample to use *ngFor Directive to iterate a table structure
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+            <th class="alternativeRow">
+                <b>Name</b>
+            </th>
+            <th>
+                <b>Email</b>   
+            </th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of users">
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.email }} </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="row text-center">
+            Sample to use *ngFor to iterate a option list
+        </div>
+         <div class="row text-center m-1">
+            <select name="">
+                <option value="user.name" *ngFor="let user of users">
+                    {{ user.name + " - " + user.email}}
+                </option>
+            </select>
+        </div> 
+    </div>
+   <div class="col-6">
+        <div class="row text-center">
+            {{ "Sample to use @for Directive to iterate a table structure" }} 
+        </div>
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>
+                
+            </th>
+            <th>
+                <b>Name</b>
+            </th>
+            <th>
+                <b>Email</b>   
+            </th>
+            </tr>
+            </thead>
+            <tbody>
+                @for (user of users; track user) 
+                {
+                   @if (!$even)
+                   {
+                        <tr  >
+                            <td class="bg-light" >{{ $index }} </td>
+                            <td class="bg-light" > {{ user.name }}</td>
+                            <td class="bg-light" >{{ user.email }} </td>
+                        </tr>                  
+                   }
+                   @else {
+                        <tr>
+                            <td >{{ $index }}</td>
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.email }} </td>
+                        </tr>    
+                   } 
+                }
+              
+            </tbody>
+        </table>
+         <div class="row text-center">
+            {{ "Sample to use @for to iterate a option list" }}
+        </div>
+         <div class="row text-center m-1">
+            <select name="">
+                @for (user of users; track user)
+                {
+                    <option value="user.name">
+                        {{ user.name + " - " + user.email}}
+                    </option>    
+                }
+               
+            </select>
+        </div> 
+    </div>
+</div>
+
+<div row="row">
+    3. Attribute Directive
+</div>
+
+
+
+
