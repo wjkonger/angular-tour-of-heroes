@@ -1,6 +1,4 @@
-<div class="row">
-<input type="text" [(ngModel)]="name">
-</div>
+<h4 class="text-primary">String Type Pipe</h4>
 <div class="row">
     <div class="col-4">
         <b>Lowercase pipe</b><br>
@@ -17,30 +15,85 @@
 </div>
 <p></p>
 <div class="row">
+    
+    <div class="col-4">
+        <b>Json pipe</b><br>
+        <pre>{{ data | json }}</pre>
+    </div>
+    
+    <div class="col-4">
+        <b>Slice pipe</b><br>
+        {{ name | slice : 4 }}
+    </div>
+     <div class="col-4">
+        <b>Slice pipe</b><br>
+        {{ name | slice : 4 : 8 }}
+    </div>
+</div>
+<p></p>
+<h4 class="text-primary">Number Type Pipe</h4>
+<div class="row">
     <b>Date pipe</b><br>
     <div class="col-4">
+        <b>custom date</b><br>
         <p>{{ today | date:'yyyy-MM-dd HH:mm:ss' }}</p>
     </div>
     <div class="col-4">
+        <b>short</b><br>
        <p>{{ today | date:'short' }}</p>
     </div>
     <div class="col-4">
+        <b>full date</b><br>
         <p>{{ today | date:'fullDate' }}</p>
     </div>
 </div>
 <p></p>
-<div class="row">
-    <b>Json pipe</b><br>
+
+<div class="row"> 
     <div class="col-4">
-        <pre>{{ data | json }}</pre>
+        <b>Decimal pipe</b><br>
+        <p>{{ 3.141534 | number : '1.2-2' }}</p>
     </div>
     <div class="col-4">
-       <p>{{ today | date:'short' }}</p>
+        <b>Percent Pipe</b><br>
+       <p>{{ 0.25 | percent }}</p>
     </div>
     <div class="col-4">
-        <p>{{ today | date:'fullDate' }}</p>
+        <b>Currency Pipe</b><br>
+        <p>{{ 24232.444 | currency : "CAD" : 'symbol-narrow' }}</p>
     </div>
 </div>
+<p></p>
+<h4 class="text-primary">Other Type Pipe</h4>
+<div class="row"> 
+    <div class="col-4">
+        <b>Async pipe</b><br>
+        <p>The async pipe subscribes to an Observable or Promise and returns the latest value it has emitted. When a new value is emitted, the async pipe marks the component to be checked for changes. When the component gets destroyed, the async pipe unsubscribes automatically to avoid potential memory leaks. When the reference of the expression changes, the async pipe automatically unsubscribes from the old Observable or Promise and subscribes to the new one.</p>
+    <ul>
+    @for (item of items | async; track item){
+        <li>{{ item }}</li>
+        
+    }
+    </ul>
+    </div>
+    <div class="col-4">
+        <b>Custome pipe - Phone #</b><br>
+        <p>{{ phoneNumber }}</p>
+        <p>{{ phoneNumber | custom }} </p>
+    </div>
+     <div class="col-4">
+        <b>Custome pipe - Canadian Postal Code</b><br>
+        <p>{{ postalCode }}</p>
+        <p>{{ postalCode | customPostalcode }}</p>
+    </div>
+</div>
+
+
+
+
+
+
+
 
 
 

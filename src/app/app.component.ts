@@ -12,4 +12,6 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'angular-tour-of-heroes' + ' ' + environment.apiUrl;
   externalLink = environment.apiUrl;
+
+   
 }
