@@ -1,14 +1,16 @@
 <div class="container d-flex justify-content-center m-5" style="height: 100%;">
     <div class="text-center w-50 p-5 border border-secondary">
         <h2> Welcome to Login</h2>
-       
-            <label for="username">Username:&nbsp; </label><input id="username" type="text" placeholder="Please enter username"><br><br>
-       
-            <label for="password">Password:&nbsp; </label><input id="password" type="password" placeholder="Please enter password"><br><br>
+        <form #userForm="ngForm" (ngSubmit)="Submit(userForm)">
+            <div class="form-group m-2">
+            <label for="username">Username:&nbsp; </label><input class="form-control" name="username" type="text" placeholder="username" [(ngModel)]="oUser.name"><br><br>
+                </div>
+                 <div class="form-group m-2">
+            <label for="password">Password:&nbsp; </label><input class="form-control" name="password" type="password" placeholder="password" [(ngModel)]="oUser.password"><br><br>
+        </div>
+            <button class="btn btn-success">Login</button>
         
-            <button class="btn btn-primary" (click)="loginData()">Login</button>
-        
-        
+        </form>
         
     </div>
 

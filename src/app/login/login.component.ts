@@ -1,22 +1,23 @@
 import { Component } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 
 export class LoginComponent{
-  constructor(private router: Router){
-    console.log("constructor called");
+  oUser : User = {};
+  
+  Submit(userForm: NgForm) {
+    console.log(userForm.value);
   }
 
- 
-
-  loginData()
-  {
-    this.router.navigateByUrl("home");
+  constructor(private router: Router){
+    
   }
 }
