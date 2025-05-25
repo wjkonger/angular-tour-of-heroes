@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    apiUrl: "https://www.google.ca/"
+    apiUrl: "http://localhost:3000/"
 }

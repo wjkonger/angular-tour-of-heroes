@@ -1,0 +1,51 @@
+{
+  "Users": [
+    {
+      "id": 1,
+      "name": "Michael",
+      "email": "wjkonger@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Janet",
+      "email": "Janetlin88@gmail,com"
+    },
+    {
+      "id": 3,
+      "name": "Han",
+      "email": "hankong@gmail.com"
+    },
+    {
+      "name": "Shun",
+      "email": "shunkong@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Feng",
+      "email": "Feng@gmail.com",
+      "id": 5
+    },
+    {
+      "name": "duan",
+      "email": "duan@gmail.com",
+      "id": 6
+    }
+  ],
+  "Products": [
+    {
+      "id": 1,
+      "name": "ASL 3",
+      "price": 33
+    },
+    {
+      "name": "ASL 4",
+      "price": 26,
+      "id": 2
+    },
+    {
+      "name": "ASL 5",
+      "price": 24,
+      "id": 3
+    }
+  ]
+}

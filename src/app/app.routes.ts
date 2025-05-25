@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { HookLifecycleComponent } from './hook-lifecycle/hook-lifecycle.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { TemplateDrivenFormComponent } from './template-driven-form/template-driven-form.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 export const routes: Routes = [
     {path: "", component: HomeComponent},
@@ -17,6 +18,7 @@ export const routes: Routes = [
     {path: "hook-lifecycle", component: HookLifecycleComponent},
     {path: "pipe", component: PipeComponent},
     {path: "template-driven-form", component: TemplateDrivenFormComponent},
+    {path: "product-list", component: ProductListComponent},
     {path: "**", component: PageNotFoundComponent}
 
 ];

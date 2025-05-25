@@ -1,0 +1,29 @@
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+    <th>
+        ID
+    </th>
+    <th>
+        <b>Name</b>
+    </th>
+    <th>
+        <b>Price</b>   
+    </th>
+    </tr>
+    </thead>
+    <tbody>
+        @for (product of listOfProducts; track product) 
+        {
+    
+            <tr  >
+                <td>{{ product.id }} </td>
+                <td> {{ product.name }}</td>
+                <td>{{ product.price }} </td>
+            </tr>                  
+        
+          
+        }
+        
+    </tbody>
+</table>

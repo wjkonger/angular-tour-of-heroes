@@ -1,4 +1,4 @@
 export const environment = {
     production: false,
-    apiUrl: "https://www.youtube.com/"
+    apiUrl: "http://localhost:3000/"
 }
