@@ -9,10 +9,20 @@ import { User } from '../user';
   styleUrl: './template-driven-form.component.css'
 })
 export class TemplateDrivenFormComponent {
+  SetValue(userForm: NgForm) {
+    this.oUser.name = "Michael Kong";
+    this.oUser.email = "wjkonger@gmail.com";
+    // this.oUser.password = "112323";
+
+    // userForm.setValue(this.oUser);
+
+    userForm.control.patchValue(this.oUser);
+  }
     oUser : User = {};
-    onSubmit(userForm : NgForm)
+
+    Submit(userForm : NgForm)
     {
         console.log(userForm.value);
-        
+        console.log(userForm.valid);
     }
 }

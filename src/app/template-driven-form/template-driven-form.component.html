@@ -1,12 +1,25 @@
 <div class="container">
-    <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <form #userForm="ngForm" (ngSubmit)="Submit(userForm)">
         <div class="form-group m-2">
             <label for="txtName">Name: </label>
-            <input type="text" class="form-control" name="txtName" placeholder="Name" [(ngModel)] = oUser.name>            
+            <input type="text" class="form-control" name="txtName" [(ngModel)] = oUser.name maxlength="10" required="" pattern="^[a-zA-Z\s]*$">            
         </div>
         <div class="form-group m-2">
             <label for="txtEmail">Email: </label>
-            <input type="email" class="form-control" name="txtEmail" aria-describedby="emailHelp" placeholder="Email" [(ngModel)] = oUser.email required="">
+            <input type="email" class="form-control" name="txtEmail" aria-describedby="emailHelp" placeholder="Email" [(ngModel)] = oUser.email #txtEmail="ngModel" required email>
+            @if(txtEmail?.dirty || txtEmail?.touched)
+            {
+                @if(txtEmail?.errors?.["required"])
+                {
+                    <small class="text-danger">Email is required</small>
+                }
+
+                @if(txtEmail?.errors?.["email"])
+                {
+                    <small class="text-danger">Email is invalid format</small>
+                }
+            }
+            <br>
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group m-2">
@@ -17,6 +30,7 @@
             <input type="checkbox" class="form-check-input" name="chkCheck" [(ngModel)] = oUser.isCheck>
             <label>Check me out</label>            
         </div>
-        <button class="btn btn-success m-2">Submit</button>
+        <button class="btn btn-success m-2" [disabled]="userForm.invalid" >Submit</button>
+        <button class="btn btn-warning m-2" (click)="SetValue(userForm)">Set Values</button>
     </form>
 </div>

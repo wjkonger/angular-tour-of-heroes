@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SharedDataService } from '../shared-data.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-home',
@@ -6,6 +8,20 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  dummyData : User;
+  apiData: any;
+  constructor(private _sharedDataService : SharedDataService){
+    this.dummyData = _sharedDataService.oUser;    
+  }
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(){
+    this._sharedDataService.getUserData().subscribe(response=>{
+      this.apiData = response;
+    })
+  }
 
 }

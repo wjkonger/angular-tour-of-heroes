@@ -1,1 +1,14 @@
 <p>home works!</p>
+<p>{{ dummyData.name + " has a email " + dummyData.email }}</p>
+
+
+@for(data of apiData; track data ){
+    <ul>
+        <li>Name: {{data.name}}</li>
+        <li>Username: {{data.username}}</li>
+         <li>Email: {{data.email}}</li>
+    </ul>
+    
+}
+    
+
