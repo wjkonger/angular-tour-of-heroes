@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IProduct } from '../iproduct';
-import { ProductService } from '../product.service';
+import { IProduct } from '../Interfaces/iproduct';
+import { ProductService } from '../Services/product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,6 +9,8 @@ import { ProductService } from '../product.service';
   styleUrl: './product-list.component.css'
 })
 export class ProductListComponent implements OnInit {
+ 
+
   listOfProducts : IProduct[] = [];
 
   constructor(private oProduct: ProductService)
@@ -16,9 +18,20 @@ export class ProductListComponent implements OnInit {
      
   }
   ngOnInit(): void {
+    this.ListProducts();
+  }
+
+  ListProducts()
+  {
     this.oProduct.ListProducts().subscribe(response=>{
-      this.listOfProducts = response;
-      
+      this.listOfProducts = response;   
     })
+  }
+
+   Delete(id: number) {
+    this.oProduct.Delete(id).subscribe(response =>{
+      this.ListProducts();
+    })
+    
   }
 }

@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { of } from 'rxjs';
-import { CustomPipe } from "../custom.pipe";
-import { CustomPostalcodePipe } from '../custom-postalcode.pipe';
+import { CustomPipe } from "../Pipes/custom.pipe";
+import { CustomPostalcodePipe } from '../Pipes/custom-postalcode.pipe';
 
 @Component({
   selector: 'app-pipe',
