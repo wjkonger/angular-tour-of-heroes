@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { User } from '../user';
+import { AuthService } from '../Services/auth.service';
+import { IUser } from '../Interfaces/iuser';
+import { observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +15,18 @@ import { User } from '../user';
 
 export class LoginComponent{
   oUser : User = {};
-  
+  user : IUser = {};
+
   Submit(userForm: NgForm) {
-    console.log(userForm.value);
+    this.user.username = "emilys";
+    this.user.password = "emilyspass";
+
+    this.oAuth.login(this.user).subscribe(response=>{
+      this.oAuth.storeJwtToken(response.accessToken as string);
+    })
   }
 
-  constructor(private router: Router){
+  constructor(private router: Router, private oAuth: AuthService){
     
   }
 }
