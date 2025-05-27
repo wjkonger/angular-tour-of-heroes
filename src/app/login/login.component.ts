@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from '../Interfaces/user';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',

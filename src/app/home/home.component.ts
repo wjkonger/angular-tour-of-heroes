@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedDataService } from '../Services/shared-data.service';
-import { User } from '../Interfaces/user';
+import { User } from '../user';
 
 @Component({
   selector: 'app-home',
